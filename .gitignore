@@ -14,4 +14,3 @@ yarn-error.log
 .babelrc
 package*
 webpack*
-*git pull

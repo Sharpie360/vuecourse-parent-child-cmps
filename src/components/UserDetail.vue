@@ -10,6 +10,8 @@
 </template>
 
 <script>
+    import { eventBus } from '../main.js'
+
     export default {
         // props validation as object
         props: {
@@ -27,6 +29,12 @@
                 this.name = 'Sean';
                 this.$emit('nameWasReset', this.name)
             }
+        },
+        created() {
+            // listen to events emitted ON this Vue instance
+            eventBus.$on('ageWasEdited', (age) => {
+                this.userAge = age;
+            });
         }
     }
 </script>

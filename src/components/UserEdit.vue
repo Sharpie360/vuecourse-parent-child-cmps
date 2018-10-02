@@ -8,15 +8,23 @@
 </template>
 
 <script>
-export default {
-    props: ['userAge'],
-    methods: {
-        editAge() {
-            this.userAge = 30;
-            this.$emit('ageWasEdited', this.userAge)
+    import { eventBus } from '../main.js'
+
+    export default {
+        props: ['userAge'],
+        methods: {
+            editAge() {
+                this.userAge = 30;
+                // first method to passing data - custom event
+                //this.$emit('ageWasEdited', this.userAge)
+                // second method - using eventBus
+                //eventBus.$emit('ageWasEdited', this.userAge)
+                //third - method inside eventBus
+                eventBus.changeAge(this.userAge)
+
+            }
         }
     }
-}
 </script>
 
 <style scoped>

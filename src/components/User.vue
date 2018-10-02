@@ -3,6 +3,9 @@
         <h1>The User Component</h1>
         <p>I'm an awesome User!</p>
         <button @click="changeName">Change My Name</button>
+        <p>Name is: {{ name }}</p>
+        <!-- shows that eventbus doesnt send through parent cmps -->
+        <p>Age is: {{ age }} </p>
         <hr>
         <div class="row">
             <div class="col-xs-12 col-sm-6">
